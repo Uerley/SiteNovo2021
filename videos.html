@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        #meio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media screen and (min-width:768px) {
+            #meio {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                max-width: 450px;
+                margin: 0 auto;
+            }
+
+
+            #meio h1,
+            img {
+                text-align: center;
+                width: 100%;
+                /* height: 100%; */
+            }
+
+
+            #meio div {
+                flex-grow: 1;
+                flex-basis: 150px;
+                padding: 0px 10px;
+                /* padding: 50px; */
+
+            }
+
+
+            #meio img {
+                width: 105%;
+                /* max-width: 800px; */
+
+            }
+
+            #meio a {
+                margin: 12px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <nav>
+
+            <a href="#">Radio Web</a>
+            <ul>
+                <!--  
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#serviços">Serviços</a></li>
+            <li><a href="#fotos">fotos</a></li>
+            <li><a href="#contato">Contato</a></li>
+-->
+                <li><a href="#">Home</a></li>
+                <li><a href="programacao.html">Programação</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="contado.html">Contato</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="galeria.html">Galeria de fotos</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <div id="meio">
+        <h1>Vídeos</h1>
+        <a href="vide1.html"><img src="thumb-html.png" alt=""></a>
+        <a href="001.html"><img src="thumb-hardware.png" alt=""></a>
+        <a href="002.html"><img src="thumb-js.png" alt=""></a>
+        <a href="003.html"><img src="thumb-python.png" alt=""></a>
+    </div>
+
+    <footer>
+        <h2>Radio Web</h2>
+        <ul>
+
+            <li><i class="fab fa-facebook"></i></li>
+            <li><i class="fab fa-facebook"></i></li>
+            <li><i class="fab fa-facebook"></i></li>
+            <li><i class="fab fa-facebook"></i></li>
+            <li><i class="fab fa-facebook"></i></li>
+        </ul>
+        <hr>
+        <p>&copy;Radio Web, 2021</p>
+    </footer>
+</body>
+
+</html>
