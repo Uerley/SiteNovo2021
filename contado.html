@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .Contato-container {
+            margin-top: 120;
+        }
+
+        .Contato ul li {
+            margin: 40;
+            list-style: none;
+        }
+
+        .Contato ul li button {
+            background-color: gray;
+            width: 80;
+            border: 20px;
+            cursor: pointer;
+        }
+
+        input[type='text'],
+        input[type='email'] {
+            width: 30%;
+            padding: 12px 20px;
+            margin: 1px 0;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            width: 50%;
+            padding: 2px 10px;
+            margin: 1px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Contato-container">
+        <div class="Contato">
+            <form>
+                <ul>
+                    <li><input type="text" name="nome" placeholder="Seu Nome"></li>
+                    <li><input type="email" name="email" placeholder="Seu Email"></li>
+                    <li><input type="text" placeholder="Sua Musica"></li>
+                    <li><textarea id="msg" style="resize:none;" cols="30" rows="2"></textarea>
+                    </li>
+                    <li><button>Enviar</button></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

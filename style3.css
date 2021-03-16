@@ -1,0 +1,25 @@
+p{
+    color: grey;
+    text-align: left;
+    text-transform: uppercase;/*letras maiculas*/
+    text-indent: 20px;/*recuo do texto primeira linha*/
+    line-height: 30px;/*cada linha 25*/
+    direction: rtl;/*ir para direita para esquerda. ltr: esquerda para direita*/
+    letter-spacing: 5px;/*espaçamento de uma letras para outra*/
+    word-spacing: 0;/*espaçamnto entre palavras*/
+    text-shadow: 3px 3px 4px red;/*sobra horizontal,vetical,desfoque*/
+}
+h1{
+    text-align: left;
+    text-decoration: underline;/*linha abaixo do texto*/
+    text-transform: lowercase;/*minuculas*/
+}
+h2{
+    text-align: right;
+    text-decoration: overline;/*linha sobre o texto */
+    /* text-transform: capitalize; */
+}
+h3{
+    text-align: center;
+    text-decoration: line-through;/*linha sobre o texto////// ´Para tirar a linha do texto*/
+}

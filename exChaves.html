@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- =======================================================
+
+    OLÁ!!!
+
+    Eu sou o Nando Angelo e fiz esse teste baseado no 
+    exercício 03 do curso de JavaScript do Guanabara.
+    
+    Se tiver alguma dúvida responda aos meus comentários 
+    nos vídeos do Guanabara ou fale comigo por e-mail: 
+    nandoangelo@gmail.com ou ainda pelo meu Whatsapp: 
+    (63) 98402-1954
+
+    Abraço do Nando!
+
+   =======================================================  -->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Descubra que personagem você poderia ser na turma do Chaves apenas com seu ano de nascimento. Baseado no exercício 03 do curso de JavaScript do professor Gustavo Guanabara, desenvolvi esse pequeno teste para deixar as coisas mais divertidas.">
+    <meta author="Fernando Angelo">
+    <meta name="keywords" content="javscript,curso em vídeo,guanabara,nandoangelo">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Ícone do site -->
+    <link rel="icon" href="http://nandoangelo.com.br/projetinhos/exe016-teste-do-chaves/img/chaves-icon.png">
+
+    <title>Teste do Chaves</title>
+
+    <!-- Ícones do FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset padrão */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Definindo que os elementos html e body ocuparão toda tela */
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Configurando o corpo do site */
+        body {
+            background: #433460;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12pt;
+            font-weight: normal;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Configurando nosso container */
+        .container {
+            background-color: #fff;
+            color: #333;
+            width: 420px;
+            min-height: 320px;
+            padding: 42px 30px;
+            border-radius: 20px;
+        }
+
+        .recado {
+            background-color: gold;
+            width: 70%;
+            padding: 12px 16px;
+            margin-top: 5px;
+            margin-bottom: 18px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.35em;
+        }
+
+        /* Estilizando o título */
+        h3 {
+            margin: 0.5em 0;
+        }
+
+        /* Definindo um ponteiro para as opções do radio button */
+        .radio-option {
+            cursor: pointer;
+        }
+
+        /* Configurando a exibição da foto */
+        #foto {
+            margin-top: 1em;
+            border-radius: 50%;
+            width: 180px;
+        }
+
+        /* Alterando nosso campo do formulário */
+        input[type="number"] {
+            padding: 6px;
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 0.3em;
+        }
+
+        /* Personalizando nosso botão */
+        input[type="button"] {
+            background-color: #0facf3;
+            border: 2px solid #0b7eb1;
+            border-radius: 10px;
+            padding: 8px;
+            width: 80%;
+            /* deixando ele responsivo */
+            font-size: 1em;
+            color: #fff;
+            margin: 1em 0;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* Adicionando efeito ao botão */
+        input[type="button"]:hover,
+        input[type="button"]:focus {
+            background-color: #0b7eb1;
+            border-color: #095e85;
+            transition: all 0.3s;
+        }
+
+        /* Configurando nosso rodapé */
+        footer {
+            color: #fff;
+            margin: 1.3em;
+        }
+
+        /* Ícones para redes sociais */
+        .fa {
+            color: #FFF;
+            font-size: 1.25em !important;
+            padding: 20px;
+            width: 20px;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px 2px;
+            border-radius: 50%;
+            border-style: solid;
+            border-width: 2px;
+            border-color: #fff;
+        }
+
+        /* Definindo transição */
+        .fa:hover {
+            transition: all 0.35s;
+        }
+
+        /* Cor verde para o Whatsapp */
+        .fa-whatsapp:hover,
+        .fa-whatsapp:focus {
+            background-color: #00b489;
+            border-color: #00b489;
+        }
+
+        /* Cor vermelha alaranjada para o Instagram */
+        .fa-instagram:hover,
+        .fa-instagram:focus {
+            background-color: tomato;
+            border-color: tomato;
+        }
+
+        /* Cor azul para o Facebook */
+        .fa-facebook:hover,
+        .fa-facebook:focus {
+            background-color: #3B5998;
+            border-color: #3B5998;
+        }
+
+        /* Cor vermelha para o YouTube */
+        .fa-youtube:hover,
+        .fa-youtube:focus {
+            background-color: #bb0000;
+            border-color: #bb0000;
+        }
+
+        /* Definindo um comportamento responsivo */
+        @media all and (max-width: 500px) {
+            body {
+                display: inline-block;
+            }
+
+            .container {
+                width: 320px;
+                margin: 0 auto;
+                border-radius: 0;
+                padding: 20px 0px;
+            }
+        }
+    </style>
+</head>
+
+<body onload="atualizaAnoRodape()">
+    <!-- 
+      onload="atualizaAnoRodape()"
+
+      Ao carregar o <body> ativamos esta função que criamos em 
+      JavaScript para atualizar o ano no rodapé do nosso site
+     -->
+
+    <!-- inicio: .container -->
+    <div class="container">
+
+        <!-- Caixa amarela com dica do que esse programa faz -->
+        <div class="recado">
+            <p>Descubra qual personagem de <strong>Chaves</strong>
+                você poderia ser.</p>
+        </div>
+
+        <h3>Ano de Nascimento</h3>
+
+        <!-- Campo para inserir o ano de nascimento -->
+        <input type="number" name="txtano" id="txtano" min="0" value="1900" placeholder="Ano em que você nasceu">
+
+        <h3>Sexo</h3>
+
+        <!-- Opção radio: 'masc' -->
+        <label class="radio-option">
+            <input type="radio" name="genre" id="masc" checked="checked">
+            Masculino
+        </label>
+
+        <!-- Espaço em branco (2x) -->
+        &nbsp;&nbsp;
+
+        <!-- Opção radio: 'fem' -->
+        <label class="radio-option">
+            <input type="radio" name="genre" id="fem">
+            Feminino
+        </label>
+
+        <!-- Nosso botão mágico que chama a função 'verificar()' -->
+        <input type="button" value="Verificar" onclick="verificar()">
+
+        <!-- Espaço reservado para a resposta da função 'verificar()' -->
+        <div id="res">
+            <p>Preencha os campos e clique em 'Verificar'.</p>
+        </div>
+    </div>
+    <!-- fim: .container -->
+
+    <!-- início: footer -->
+    <footer>
+        <!-- 
+          Se lembra da função 'atualizaAnoRodape()'?
+          Ela atualiza o que está dentro do <span> abaixo
+         -->
+        <p class="copy">&copy; Nando Angelo <span class="ano">20xx</span></p>
+
+        <!-- Link do meu Whatsapp -->
+        <a href="https://wa.me/5563984021954" title="Mande uma mensagem pra mim" class="fa fa-whatsapp"></a>
+
+        <!-- Link do meu Instagram -->
+        <a href="https://instagram.com/nandoangelo" title="Siga meu instagram" class="fa fa-instagram"></a>
+
+        <!-- Link do meu Facebook -->
+        <a href="https://facebook.com/nandoangelo" title="Seja meu amigo no Facebook" class="fa fa-facebook"></a>
+
+        <!-- Link do meu canal no YouTube -->
+        <a href="https://youtube.com/nandoangelo" title="Conheça meu canal" class="fa fa-youtube"></a>
+    </footer>
+    <!-- fim: footer-->
+
+    <!-- 
+      JavaScript
+    -->
+    <script>
+        // Recebendo a data e hora do sistema
+        var agora = new Date();
+        var ano = agora.getFullYear();
+
+        /* 
+          FUNÇÃO: atualizaAnoRodape()
+          ============================================
+          Criada para atualizar o ano no rodapé do 
+          nosso site. */
+
+        function atualizaAnoRodape() {
+
+            // Manipulador do DOM
+            var anoRodape = document.querySelector('span.ano');
+
+            // Recebe o ano atual do sistema
+            anoRodape.innerText = ano;
+        }
+
+        /* 
+          FUNÇÃO: verificar() 
+          ============================================
+          Recebe os dados passados pelo usuário e 
+          retorna o resultado do nosso teste na área
+          reservada. */
+
+        function verificar() {
+
+            // Recebe o ano informado pelo usuário
+            var anoNascimento = document.getElementById('txtano');
+            // Manipulador da área onde iremos colocar o resultado do teste
+            var resposta = document.querySelector('div#res');
+
+            // Teste para saber se o ano inserido pelo usuário é válido
+            if (anoNascimento.value == 0 || anoNascimento.value > ano) {
+
+                // ENCONTROU ERRO... 
+
+                // Exibe alerta para o usuário
+                window.alert(`[ERROR] "${anoNascimento.value}" Não é um valor aceitável.\n` +
+                    `Verifique os dados e tente novamente.`);
+            }
+            else {
+
+                // NÃO ENCONTROU ERRO...
+
+                // Cria as variáveis para manipular os elementos
+                var fsex = document.getElementsByName('genre'); // Recebe os 'radio buttons'
+                var idade = ano - Number(anoNascimento.value); // Calcula a idade
+                var genero = ''; // Variável para receber o gênero
+                var img = document.createElement('img'); // Cria um elemento de imagem <img>
+                var legenda = ''; // Legenda da foto
+
+                // Definindo um ID em nosso elemento <img>
+                img.setAttribute('id', 'foto')
+
+                // Agora veremos qual o sexo selecionado pelo usuário
+                if (fsex[0].checked) {
+
+                    // Marcou 'Masculino'
+                    genero = 'Homem';
+
+                    // Teste para exibir a foto masculina de acordo com a idade calculada
+                    if (idade >= 0 && idade < 12) {
+                        // Criança
+                        img.setAttribute('src', 'http://nandoangelo.com.br/projetinhos/exe016-teste-do-chaves/img/chaves-crianca-masc.jpg');
+                        legenda = 'O Chaves'; // Define a legenda da foto
+                    } else if (idade < 21) {
+                        // Jovem
+                        img.setAttribute('src', 'http://nandoangelo.com.br/projetinhos/exe016-teste-do-chaves/img/chaves-jovem-masc.jpg');
+                        legenda = 'O Kiko'; // ...
+                    } else if (idade < 50) {
+                        // Adulto
+                        img.setAttribute('src', 'http://nandoangelo.com.br/projetinhos/exe016-teste-do-chaves/img/chaves-adulto-masc.jpg');
+                        legenda = 'O Seu Madruga';
+                    } else {
+                        // Idoso
+                        img.setAttribute('src', 'http://nandoangelo.com.br/projetinhos/exe016-teste-do-chaves/img/chaves-idoso-masc.jpg');
+                        legenda = 'O Jaiminho';
+                    }
+
+                } else if (fsex[1].checked) {
+
+                    // Marcou 'Feminino'
+                    genero = 'Mulher';
+
+                    // Teste para exibir a foto feminina de acordo com a idade calculada
+                    if (idade >= 0 && idade < 12) {
+                        // Criança
+                        img.setAttribute('src', 'http://nandoangelo.com.br/projetinhos/exe016-teste-do-chaves/img/chaves-crianca-fem.jpg');
+                        legenda = 'A Chiquinha'; // Definindo a legenda da foto
+                    } else if (idade < 21) {
+                        // Jovem
+                        img.setAttribute('src', 'http://nandoangelo.com.br/projetinhos/exe016-teste-do-chaves/img/chaves-jovem-fem.jpg');
+                        legenda = 'A Paty'; // ...
+                    } else if (idade < 50) {
+                        // Adulto
+                        img.setAttribute('src', 'http://nandoangelo.com.br/projetinhos/exe016-teste-do-chaves/img/chaves-adulto-fem.jpg');
+                        legenda = 'A Dona Florinda';
+                    } else {
+                        // Idoso
+                        img.setAttribute('src', 'http://nandoangelo.com.br/projetinhos/exe016-teste-do-chaves/img/chaves-idoso-fem.jpg');
+                        legenda = 'A Dona Neves';
+                    }
+                }
+
+                // Montando e exibindo a resposta para o usuário
+                resposta.innerHTML = `<p>Você é <strong>${genero}</strong> e tem <strong>${idade} anos.</strong></p><p>Você poderia ser...</p>`;
+
+                // Acrescentando a foto na resposta
+                resposta.appendChild(img);
+
+                // Acrescentando a legenda abaixo da foto
+                resposta.innerHTML += `<h3>${legenda}</h3>`;
+            }
+        }
+      // --------------------------
+      //  FIM DO CÓDIGO JAVASCRIPT
+      // --------------------------
+    </script>
+    <!-- Fim: JavaScript -->
+</body>
+
+</html>
