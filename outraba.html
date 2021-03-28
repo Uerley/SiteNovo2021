@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ddd;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav_tabs {
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .nav_tabs ul {
+            list-style: none;
+        }
+
+        .nav_tabs ul li {
+            float: left;
+        }
+
+        .nav_tabs label {
+            width: 100px;
+            padding: 25px;
+            background-color: #363a75;
+            display: block;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /*Mundança de cor quando radio label for checado*/
+        .rd_tabs:checked~label {
+            background-color: #e54e43;
+        }
+
+        .rd_tabs {
+            display: none;
+        }
+
+        /*conteudo da aba janela branca conteudo de cada aba */
+        .content {
+            border-top: 5px solid #e54e43;
+            background-color: #fff;
+            display: none;
+            position: absolute;
+            height: 320px;
+            width: 600px;
+            left: 0;
+        }
+
+        .content article {
+            padding: 10px;
+        }
+
+        /*radio button tiver checado*/
+        .rd_tabs:checked~.content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav_tabs">
+        <ul>
+            <li>
+                <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
+                <label for="tab1">Tab 1</label>
+                <div class="content">
+                    <article>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur expedita suscipit
+                            doloremque numquam autem explicabo natus maxime totam voluptatum quasi. Laboriosam mollitia
+                            id perspiciatis culpa, pariatur dolorum doloremque nulla est.
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores officiis deserunt dolor
+                            corrupti provident! Recusandae, excepturi aliquid culpa quam possimus omnis beatae
+                            voluptatibus quibusdam similique minus iure. Magni, totam libero.</p>
+                    </article>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
+                <label for="tab2">Tab 2</label>
+                <div class="content">
+                    <article>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique est voluptates possimus
+                            ipsam velit doloremque impedit molestiae inventore quod ratione temporibus quidem, harum
+                            facere laudantium minus officiis ut dolores nulla! Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Nobis reprehenderit, quo nihil tempore beatae aperiam! Expedita,
+                            praesentium. Ipsum magnam esse nemo debitis veritatis quam expedita ipsam quidem? Itaque,
+                            mollitia reiciendis.</p>
+                    </article>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="tabs" class="rd_tabs" id="tab3">
+                <label for="tab3">Tab 3</label>
+                <div class="content">
+                    <article>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, in nihil tempore distinctio
+                            nobis unde porro modi officia delectus sequi soluta numquam blanditiis. Labore distinctio
+                            similique, obcaecati inventore quidem eos!
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis aut explicabo amet
+                            asperiores distinctio sit, dolores aspernatur cumque officia? Dicta non modi, quas magni
+                            ipsum ullam incidunt beatae? Quidem, officiis.
+                        </p>
+                    </article>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="tabs" class="rd_tabs" id="tab4">
+                <label for="tab4">Tab 4</label>
+                <div class="content">
+                    <article>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quos vel blanditiis omnis a
+                            laudantium consequuntur, tenetur nam, dolorem exercitationem ratione quia. Sed adipisci
+                            mollitia deleniti reiciendis similique, dolores voluptate!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nemo repudiandae fuga ab
+                            recusandae minima a reprehenderit dicta illo error inventore officia autem, eligendi est ex
+                            quis doloremque. Ut, voluptas!
+                        </p>
+                    </article>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

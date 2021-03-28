@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/aba.css">
+</head>
+
+<body>
+    <div id="componente">
+        <div id="titulos">
+            <p id="tituloUm" onclick="abrirAbaUm()">aba um</p>
+            <p id="tituloDois" onclick="abrirAbaDois()">aba Dois</p>
+            <p id="tituloTres" onclick="abrirAbaTres()">aba Tres</p>
+        </div>
+        <div id="abas">
+            <div id="abaUm">
+                coteudo da aba um
+            </div>
+            <div id="abaDois">
+                conteudo Dois
+            </div>
+            <div id="abaTres">
+                conteudo Três
+            </div>
+        </div>
+    </div>
+    <script>
+        var abaUm = document.getElementById("abaUm");
+        var abaDois = document.getElementById("abaDois")
+        var abaTres = document.getElementById("abaTres")
+
+        function abrirAbaDois() {
+            abaDois.style.zIndex = 0; /*Para Abrir aba*/
+        }
+        function abrirAbaUm() {
+            abaDois.style.zIndex = -1; /*Para Abrir aba*/
+        }
+
+        function abrirAbaTres() {
+            abaTres.style.zIndex = -2; /*Para Abrir aba*/
+        }
+    </script>
+</body>
+
+</html>
