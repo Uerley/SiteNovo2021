@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides</title>
+    <link rel="stylesheet" href="../CSS/slidess.css">
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <!-- buttons começa -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <!-- butão termina -->
+            <!-- imagem slider  -->
+            <div class="slide primeiro">
+                <img src="../IMG/img_1.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="../IMG/img_2.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="../IMG/img_3.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="../IMG/img_4.jpg" alt="">
+            </div>
+            <!-- imagem slider fim -->
+            <!--Navegação Automatica  -->
+            <div class="navegacao-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+            <!--Navegação Automatica Fim -->
+        </div>
+        <!-- Manual Navegação -->
+        <div class="navegacao-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+        <!-- Manual Navegação fim -->
+    </div>
+    <script>
+        var contar = 1;
+        setInterval(function () {
+            document.getElementById('radio' + contar).checked = true;
+            contar++;
+            if (contar > 4) {
+                contar = 1;
+            }
+        }, 5000);
+    </script>
+</body>
+
+</html>
